@@ -23,8 +23,8 @@ class Pdftk < BaseCustom
     write_stdout "complete compiling #{name}"
     #try to set variables
     write_stdout " adding them into .profile.d/pdftk.sh"
-    %x{ echo "export PATH=\"/app/vendor/pdftk/bin:$PATH\"" >> $BUILD_DIR/.profile.d/pdftk.sh } 
-    %x{ echo "export LD_LIBRARY_PATH=\"/app/vendor/pdftk/lib:$LD_LIBRARY_PATH\"" > $BUILD_DIR/.profile.d/pdftk.sh }
+    %x{ echo "export PATH=\"/app/vendor/pdftk/bin:$PATH\"" >> #{build_path}/.profile.d/pdftk.sh } 
+    %x{ echo "export LD_LIBRARY_PATH=\"/app/vendor/pdftk/lib:$LD_LIBRARY_PATH\"" > #{build_path}/.profile.d/pdftk.sh }
     write_stdout "completed: adding them into .profile.d/pdftk.sh"
   end
 
